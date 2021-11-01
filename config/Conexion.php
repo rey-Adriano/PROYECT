@@ -2,7 +2,7 @@
 namespace config;
 
 class Conexion{
-    private $dsn = "mysql:host=127.0.0.1:3306;dbname=envios";
+    private $dsn = "mysql:host=localhost;dbname=envios";
     private $username = "root";
     private $password = "";
     private $opciones = array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES "UTF8"');
