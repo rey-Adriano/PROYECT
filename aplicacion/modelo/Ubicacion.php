@@ -78,6 +78,8 @@ class Ubicacion{
         $this->pedido_id = $pedido_id; 
     }
 
+    
+
 
 
 
