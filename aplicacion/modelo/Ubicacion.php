@@ -78,18 +78,20 @@ class Ubicacion{
         $this->pedido_id = $pedido_id; 
     }
 
-    
+    public function mostrar()
+    {
+        try{
+            $conn= new Conexion();
+            $sql= "SELECT * FROM ubicacion"; 
+            $resultados = $conn->conectar->query($sql); 
+            $conn->desconectar(); 
+            return $resultados; 
 
-
-
-
-
-    
-
-
-
-
-
+        }catch(\PDOException $e){
+            return $e->getMessage(); 
+            
+        }
+    }
 
 
 
