@@ -1,19 +1,17 @@
 <?php
+namespace aplicacion\controladores;
 
+use aplicacion\modelo\Pedido;
 
-use aplicacion \ modelo \ Pedido ;
+require_once "config\autocarga.php";
 
-require_once  "config \ autocarga.php" ;
+class ControladorPedido{
 
-class PedidoControlador {
-
-     function static  public mostrarTodo (): \ PDOStatement { 
-        $pedido = nuevo  Pedido ();
-        $resultados = $pedido -> mostrar ();
-        return  $ resultado ;
+    public static function mostrarTodo(): \PDOStatement{
+        $pedido= new Pedido();
+        $resultado = $pedido->mostrar();
+        return $resultado;
     }
-
 
     
 }
-?>
