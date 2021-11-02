@@ -9,7 +9,7 @@ if ($resultados->rowCount() == 0) {
     echo "No hay datos que mostrar";
 } else {
     ?>
-    <table border="1" cellspacing="0" align="center" class="table table-striped">
+    <table border="1" cellspacing="0" align="center" class="table table-dark table-striped">
         <thead>
         <tr>
             <th scope="col">id</th>
