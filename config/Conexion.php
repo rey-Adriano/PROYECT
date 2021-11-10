@@ -2,9 +2,9 @@
 namespace config;
 
 class Conexion{
-    private $dsn = "mysql:host=localhost;dbname=envios";
+    private $dsn = "mysql:host=localhost;dbname=usuarios";
     private $username = "root";
-    private $password = "reyk17";
+    private $password = "";
     private $opciones = array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES "UTF8"');
     public $conectar;
 
@@ -16,4 +16,6 @@ class Conexion{
     public function desconectar(){
         $this->conectar = null;
     }
+
+
 }
