@@ -17,39 +17,37 @@
 
 
 <?php
-use aplicacion\controladores\UbicacionControlador;
-require_once "aplicacion\controladores\UbicacionControlador.php";
+use aplicacion\controladores\TiendaControlador;
+require_once "aplicacion\controladores\TiendaControlador.php";
 require_once "public/layout/header.php";
 
-$resultados = UbicacionControlador::mostrarTodo();
+$resultados = TiendaControlador::mostrarTodo();
 
 if ($resultados->rowCount() == 0) {
     echo "No hay datos que mostrar";
+    echo "suba datos a travez de Guardar"; 
 } else {
     ?>
     <table border="1" cellspacing="0" align="center" class="table table-dark table-striped">
         <thead>
         <tr>
             <th scope="col">id</th>
-            <th scope="col">provincia</th>
-            <th scope="col">distrito</th>
-            <th scope="col">calle</th>
-            <th scope="col">número</th>
-            <th scope="col">id pedido</th>
-            <th scope="col">Actualizar</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">direccion</th>
+            <th scope="col">telefono</th>
+            
         </tr>
         </thead>
         <tbody>
         <?php
-        foreach ($resultados as $ubicacion) {
+        foreach ($resultados as $tienda) {
             echo "<tr>
-                <td scope='row'>" . $ubicacion["id"] . "</td>
-                <td>" . $ubicacion["provincia"] . "</td>
-                <td>" . $ubicacion["distrito"] . "</td>
-                <td>" . $ubicacion["calle"] . "</td>
-                 <td>" . $ubicacion["nro"] . "</td>
-                 <td>" . $ubicacion["pedido_id"] . "</td>
-                 <td><a href='ubicacionActualizar.php?id=" . $ubicacion["id"] . "'>actualizar</a></td>
+                <td scope='row'>" . $tienda["idtienda"] . "</td>
+                <td>" . $tienda["nombre"] . "</td>
+                <td>" . $tienda["direccion"] . "</td>
+                <td>" . $tienda["telefono"] . "</td>
+                 
+                 
                 
          
               </tr>";

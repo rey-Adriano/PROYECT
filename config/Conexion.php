@@ -4,7 +4,7 @@ namespace config;
 class Conexion{
     private $dsn = "mysql:host=localhost;dbname=envios";
     private $username = "root";
-    private $password = "";
+    private $password = "reyk17";
     private $opciones = array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES "UTF8"');
     public $conectar;
 

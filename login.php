@@ -26,7 +26,7 @@
         <p>Ingrese su contraseña:</p><input type="password" name="contraseña" placeholder="contraseña"/>
         <input  type="submit" value="Login">
         <P>¿No tienes cuenta? </P>
-        <p>Crea una <a href="#"> AQUÍ </a></p>
+        <p>Crea una <a href="registro.php"> AQUÍ </a></p>
         </form>
     </div>
 </div>

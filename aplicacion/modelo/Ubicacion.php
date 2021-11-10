@@ -94,5 +94,46 @@ class Ubicacion{
     }
 
 
+    public function guardar()
+    {
+        try{
+            $conn = new Conexion();
+            $sql = "INSERT INTO ubicacion(provincia, distrito, calle, nro,pedido_id) 
+            VALUES ('$this->provincia','$this->distrito','$this->calle','$this->nro','$this->pedido_id')";
+            $resultados = $conn->conectar->exec($sql); 
+            $conn->desconectar(); 
+            return $resultados; 
+        }
+        catch(\PDOException $e){
+            return $e->getMessage(); 
+
+        }
+    }
+
+    public function mostrarPorId(){
+        try {
+            $conn = new Conexion();
+            $sql = "SELECT * FROM ubicacion WHERE id=$this->id";
+            $resultados = $conn->conectar->query($sql);
+            $conn->desconectar();
+            return $resultados;
+        } catch (\PDOException $e) {
+            return $e->getMessage();
+        }
+    }
+    
+
+    public function actualizar(){
+        try {
+            $conn = new Conexion();
+            $sql = "UPDATE ubicacion SET provincia='$this->provincia', distrito='$this->distrito',  calle='$this->calle', nro='$this->nro',  pedido_id='$this->pedido_id'
+             WHERE id=$this->id";
+            $resultados = $conn->conectar->exec($sql);
+            $conn->desconectar();
+            return $resultados;
+        } catch (\PDOException $e) {
+            return $e->getMessage();
+        }
+    }
 
 }
